@@ -1,0 +1,35 @@
+:root {
+    --clr-void: #170a08;
+    --clr-awning:#FDD702;
+    --clr-clay: #241211;
+    --clr-ambed: #d99a44;
+    --clr-cream: #f4e9da;
+    --clr-cream-dim: #f4e9da99;
+
+    --font-display: 'Instrument Serif', '', serif;
+    --font-ui: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: var(--clr-void);
+    font-family: var(--font-ui);
+    color: var(--clr-cream);
+    overflow: hidden;
+}
+
+#app {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
