@@ -1,0 +1,47 @@
+.bg-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.bg-image {
+    position: absolute;
+    inset: 0;
+    background-image: url('/bg.jpg');
+    background-size: cover;
+    background-position: center; 
+}
+
+.bg-decoy {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.bg-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient();
+    pointer-events: none;
+}
+
+.title-mark {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    text-align: center;
+    font-family: var(--font-display);
+    color: var(--clr-cream);
+    pointer-events: none;
+    user-select: none;
+}
+
+.title-mark:empty::before {
+    content: 'test';
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    opacity: 0.9;
+}
