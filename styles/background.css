@@ -30,19 +30,49 @@
 
 .title-mark {
     position: absolute;
-    top: 12%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
-    text-align: center;
-    font-family: var(--font-display);
-    color: var(--clr-cream);
+}
+
+.title-mark-image {
+    position: absolute;
+    inset: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.45));
     pointer-events: none;
+}
+
+.title-mark-decoy {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    -webkit-user-drag: none;
     user-select: none;
 }
 
-.title-mark:empty::before {
-    content: 'test';
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    opacity: 0.9;
+
+.title-mark--upper {
+    top: 14%;
+    left: 45%;
+    width: min(80vw, 850px);
+    aspect-ratio: 6 / 1;
 }
+
+.title-mark--upper .title-mark-image {
+    background-image: url('/logo1.svg');
+}
+
+.title-mark--lower {
+    top: 28%;
+    left: 55%;
+    width: min(65vw, 650px);
+    aspect-ratio: 6 / 1.4;
+}
+
+.title-mark--lower .title-mark-image {
+    background-image: url('/logo2.svg');
+}
+
