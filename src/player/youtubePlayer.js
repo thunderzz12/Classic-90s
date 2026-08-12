@@ -66,7 +66,7 @@ function handleError(event) {
     return;
   }
  
-  
+
   setTimeout(() => ytPlayer?.nextVideo(), 0);
 }
 
@@ -93,3 +93,54 @@ function handleStateChange(event) {
 
 
 // ASYNC FUNCS~ todo
+export async function initPlayer() {
+  const YT = await loadYouTubeApi();
+ 
+  return new Promise((resolve) => {
+    ytPlayer = new YT.Player('youtube-player', {
+      height: '1',
+      width: '1',
+      playerVars: {
+        listType: 'playlist',
+        list: PLAYLIST_ID,
+        autoplay: 0,
+        controls: 0,
+        disablekb: 1,
+        modestbranding: 1,
+      },
+      events: {
+        onReady: () => {
+          setState({ isReady: true });
+          startProgressLoop();
+          resolve(ytPlayer);
+        },
+        onStateChange: handleStateChange,
+        onError: handleError,
+      },
+    });
+  });
+}
+ 
+export function togglePlay() {
+  if (!ytPlayer) return;
+  const YT = window.YT;
+  if (ytPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
+    ytPlayer.pauseVideo();
+  } else {
+    ytPlayer.playVideo();
+  }
+}
+ 
+export function nextTrack() {
+  ytPlayer?.nextVideo();
+}
+ 
+export function prevTrack() {
+  ytPlayer?.previousVideo();
+}
+
+export function seekToFraction(fraction) {
+  if (!ytPlayer) return;
+  const duration = ytPlayer.getDuration() || 0;
+  ytPlayer.seekTo(duration * fraction, true);
+}
