@@ -32,6 +32,46 @@ function startProgressLoop() {
  }, 500);   
 }
 
+const YT_ERROR_MESSAGES = {
+  2: 'Invalid video ID / playlist ID',
+  5: 'HTML5 player error.',
+  100: 'Video not found.',
+  101: 'Owner disabled embedding for this video.',
+  150: 'Owner disabled embedding for this video.',
+};
+ 
+const MAX_CONSECUTIVE_SKIPS = 15;
+let consecutiveSkips = 0;
+ 
+function handleError(event) {
+  const message = YT_ERROR_MESSAGES[event.data] || `Unknown player error (code ${event.data})`;
+  let videoUrl = 'unknown video';
+  try {
+    const urlFromApi = event.target.getVideoUrl();
+    const idFromData = event.target.getVideoData?.()?.video_id;
+    videoUrl = idFromData
+      ? `https://www.youtube.com/watch?v=${idFromData}`
+      : urlFromApi || 'unknown video';
+  } catch {
+  }
+  console.error(`[YT Player] ${message} (skip attempt ${consecutiveSkips + 1}) - ${videoUrl}`);
+  setState({ title: `Skipping unplayable track…`, author: '' });
+ 
+  if (![2, 100, 101, 150].includes(event.data)) return;
+ 
+  consecutiveSkips += 1;
+  if (consecutiveSkips >= MAX_CONSECUTIVE_SKIPS) {
+    console.error(`[YT Player] ${MAX_CONSECUTIVE_SKIPS} tracks in a row failed.`);
+    setState({ title: 'Playlist unplayable', author: '' });
+    return;
+  }
+ 
+  
+  setTimeout(() => ytPlayer?.nextVideo(), 0);
+}
+
+
+
 function handleStateChange(event) {
     const YT = window.YT;
     const isPlaying = event.data === YT.PlayerState.PLAYING;
