@@ -4,7 +4,7 @@ import { setState } from './playerState.js';
 let ytPlayer = null;
 let progressTimer = null;
 
-function loadYoutubeApi() {
+function loadYouTubeApi() {
     return new Promise((resolve) => {
         if (window.YT && window.YT.Player) {
             resolve(window.YT);
@@ -15,7 +15,7 @@ function loadYoutubeApi() {
         tag.src = 'https://www.youtube.com/iframe_api';
         document.head.appendChild(tag);
 
-        window.onYoutubeIframeAPIReady = () => resolve(window.YT);
+        window.onYouTubeIframeAPIReady = () => resolve(window.YT);
     });
 }
 
