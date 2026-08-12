@@ -1,5 +1,5 @@
 import { PLAYLIST_ID } from "../config.js";
-import { setState } from '';
+import { setState } from './playerState.js';
 
 let ytPlayer = null;
 let progressTimer = null;

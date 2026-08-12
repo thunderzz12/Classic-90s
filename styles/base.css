@@ -6,9 +6,12 @@
     --clr-cream: #f4e9da;
     --clr-cream-dim: #f4e9da99;
 
-    --font-display: 'Instrument Serif', '', serif;
+    --font-display: 'Instrument Serif', 'Tiro Devanagari Hindi', serif;
     --font-ui: 'Inter', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --radius-pill: 999px;
+    --shadow-pill: 0 20px 60px -20px rgba(0, 0, 0, 0.7), 0 2px 0 rgba(255, 255, 255, 0.04) inset;
 
 
 }
@@ -28,8 +31,32 @@ body {
     overflow: hidden;
 }
 
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
 #app {
     position: relative;
     width: 100vw;
     height: 100vh;
+}
+
+.yt-mount {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }
