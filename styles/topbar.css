@@ -1,0 +1,117 @@
+.top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+}
+
+.top-bar-zone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-bar-zone--center {
+  flex: 1;
+  justify-content: center;
+}
+
+.top-bar-zone--right {
+  justify-content: flex-end;
+}
+
+/* icons */
+.top-bar-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: var(--clr-cream);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.top-bar-icon:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: scale(1.06);
+}
+
+.top-bar-icon svg {
+  width: 100%;
+  height: 100%;
+  padding: 9px;
+}
+
+.top-bar-icon-arrow {
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--clr-cream);
+  color: var(--clr-void);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+
+.top-bar-tooltip {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  white-space: nowrap;
+
+  background: rgba(255, 105, 180, 0.12);
+  backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  box-shadow: var(--shadow-pill);
+
+  font-size: 0.78rem;
+  color: var(--clr-cream);
+
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.top-bar-icon:hover .top-bar-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.top-bar-tooltip img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .top-bar {
+    padding: 14px 16px;
+  }
+  .top-bar-icon {
+    width: 32px;
+    height: 32px;
+  }
+}

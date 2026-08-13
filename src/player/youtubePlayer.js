@@ -17,7 +17,7 @@ function loadYouTubeApi() {
 
         window.onYouTubeIframeAPIReady = () => resolve(window.YT);
     });
-}
+} 
 
 
 
@@ -112,6 +112,7 @@ export async function initPlayer() {
         onReady: () => {
           setState({ isReady: true });
           startProgressLoop();
+          ytPlayer.cuePlaylist({ listType: 'playlist', list: PLAYLIST_ID, index: 0 });
           resolve(ytPlayer);
         },
         onStateChange: handleStateChange,
