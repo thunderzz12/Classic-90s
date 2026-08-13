@@ -189,6 +189,7 @@ animation-play-state: paused;
 
 .ctrl-btn--main:hover {
   background-color: #ffffff;
+  color: #170a08;
   transform: scale(1.06);
 }
 
