@@ -81,7 +81,7 @@ animation-play-state: paused;
 
 .player-title {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--clr-cream);
   white-space: nowrap;
@@ -91,7 +91,7 @@ animation-play-state: paused;
 
 .player-artist {
   margin: 0;
-  font-size: 0.76rem;
+  font-size: 0.68rem;
   color: var(--clr-cream-dim);
   white-space: nowrap;
   overflow: hidden;
@@ -103,7 +103,7 @@ animation-play-state: paused;
   height: 4px;
   margin: 10px 0;
   border-radius: 4px;
-  background: rgba(244, 233, 218, 0.18);
+  background: rgba(244, 233, 218, 0.25);
   cursor: pointer;
 }
 
@@ -121,14 +121,31 @@ animation-play-state: paused;
   inset: 0 auto 0 0;
   width: 0%;
   border-radius: 4px;
-  background: var(--clr-amber);
+  background: #ffffff;
   transition: width 0.2s linear;
   pointer-events: none;
 }
 
+.player-progress-handle {
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease;
+}
+
+.player-progress:hover .player-progress-handle {
+  transform: translateY(-50%) scale(1);
+}
+
 .player-time {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
   color: var(--clr-cream-dim);
   display: flex;
   gap: 4px;
@@ -167,12 +184,12 @@ animation-play-state: paused;
   height: 50px;
   color: #170a08;
   background: #ffffff;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease;
 }
 
 .ctrl-btn--main:hover {
+  background-color: #ffffff;
   transform: scale(1.06);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
 }
 
 .ctrl-btn--main:active {
