@@ -19,4 +19,5 @@ npm run dev
 
 ## Suggestions / Contributing
 
-this is a personal hobby project, if you have any suggestions or bug report, you can head [here](https://github.com/thunderzz12/Classic90s/issues/new). 
+- this is a personal hobby project, if you have any suggestions or bug report, you can head [here](https://github.com/thunderzz12/Classic90s/issues/new).
+- i tried my best to keep the code clean. comments are minimal, but the naming style is descriptive and pretty self-explanatory to make it easy for others to read. 
