@@ -7,6 +7,8 @@ const state = {
   author: '',
   currentTime: 0,
   duration: 0,
+  isShuffled: false,
+  repeatMode: 'off',
 };
 
 const listeners = new Set();
