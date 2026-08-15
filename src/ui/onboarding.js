@@ -1,7 +1,6 @@
 const VISIT_COUNT_KEY = 'chaiTapri.visitCount';
 const HINT_DISABLED_KEY = 'chaiTapri.shuffleHintDisabled';
 const SHOW_AFTER_VISIT = 2;
-const AUTO_DISMISS_MS = 8000;
 
 function getVisitCount() {
   const current = Number(localStorage.getItem(VISIT_COUNT_KEY) || 0);
@@ -21,12 +20,9 @@ export function initShuffleHint() {
 
   if (visitCount < SHOW_AFTER_VISIT || permanentlyDisabled) return;
 
- 
-
   const dismissForNow = () => {
     hint.classList.remove('is-visible');
   };
-
 
   const disableForever = () => {
     hint.classList.remove('is-visible');
@@ -34,15 +30,7 @@ export function initShuffleHint() {
   };
 
   setTimeout(() => hint.classList.add('is-visible'), 1500);
-  const autoDismissTimer = setTimeout(dismissForNow, AUTO_DISMISS_MS);
 
-  okBtn.addEventListener('click', () => {
-    clearTimeout(autoDismissTimer);
-    dismissForNow();
-  });
-
-  neverBtn.addEventListener('click', () => {
-    clearTimeout(autoDismissTimer);
-    disableForever();
-  });
+  okBtn.addEventListener('click', dismissForNow);
+  neverBtn.addEventListener('click', disableForever);
 }
