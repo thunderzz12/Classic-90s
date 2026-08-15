@@ -1,76 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Classic90s</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classic90s</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
     href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet"
   />
-<link rel="stylesheet" href="/styles/base.css" />
-<link rel="stylesheet" href="/styles/background.css" />
-<link rel="stylesheet" href="/styles/topbar.css" />
-<link rel="stylesheet" href="/styles/player.css" />
-
-
+  <link rel="stylesheet" href="/styles/base.css" />
+  <link rel="stylesheet" href="/styles/background.css" />
+  <link rel="stylesheet" href="/styles/topbar.css" />
+  <link rel="stylesheet" href="/styles/player.css" />
 </head>
 
 <body>
-    <div id="app">
-      <div class="bg-layer" aria-hidden="true">
-          <div class="bg-image"></div>
-          <div class="bg-decoy"></div>
-          <div class="bg-vignette"></div>
+  <div id="app">
+    <div class="bg-layer" aria-hidden="true">
+      <div class="bg-image"></div>
+      <div class="bg-decoy"></div>
+      <div class="bg-vignette"></div>
+    </div>
+
+    <div class="title-mark title-mark--upper" id="titleMarkUpper" aria-hidden="true">
+      <div class="title-mark-image"></div>
+      <div class="title-mark-decoy"></div>
+    </div>
+    <div class="title-mark title-mark--lower" id="titleMarkLower" aria-hidden="true">
+      <div class="title-mark-image"></div>
+      <div class="title-mark-decoy"></div>
+    </div>
+
+    <div class="top-bar">
+      <div class="top-bar-zone top-bar-zone--left"></div>
+
+      <div class="top-bar-zone top-bar-zone--center" id="listenerCount"></div>
+
+      <div class="top-bar-zone top-bar-zone--right">
+
+        <!-- github -->
+
+        <a class="top-bar-icon" href="https://github.com/thunderzz12/Classic90s" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.61.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+          <span class="top-bar-icon-arrow" aria-hidden="true">↗</span>
+          <div class="top-bar-tooltip top-bar-tooltip--pink">
+            <img src="/emoji.png" alt="" />
+            <span>would mean a lot if you starred it!</span>
+          </div>
+        </a>
+
+        <!-- ytm -->
+
+        <a class="top-bar-icon" href="https://music.youtube.com/playlist?list=PLASDflY7MWjE" target="_blank" rel="noopener noreferrer" aria-label="Open playlist on YouTube Music">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 16.5c-3.58 0-6.5-2.92-6.5-6.5S8.42 5.5 12 5.5s6.5 2.92 6.5 6.5-2.92 6.5-6.5 6.5zM9.5 8.5v7l6-3.5-6-3.5z"/></svg>
+          <span class="top-bar-icon-arrow" aria-hidden="true">↗</span>
+          <div class="top-bar-tooltip">
+            <span>Listen on YouTube Music</span>
+          </div>
+        </a>
       </div>
-
-
-      <div class="title-mark title-mark--upper" id="titleMarkUpper" aria-hidden="true">
-        <div class="title-mark-image"></div>
-        <div class="title-mark-decoy"></div>
-      </div>
-      <div class="title-mark title-mark--lower" id="titleMarkLower" aria-hidden="true">
-        <div class="title-mark-image"></div>
-        <div class="title-mark-decoy"></div>
-      </div>
-
-      <div class="top-bar">
-        <div class="top-bar-zone top-bar-zone--left"></div>
-
-        <div class="top-bar-zone top-bar-zone--center" id="listenerCount"></div>
-
-        <div class="top-bar-zone top-bar-zone--right">
-
-    <!-- github -->
-
-    <a class="top-bar-icon" href="https://github.com/thunderzz12/Classic90s" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.61.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
-      <span class="top-bar-icon-arrow" aria-hidden="true">↗</span>
-      <div class="top-bar-tooltip top-bar-tooltip--pink">
-        <img src="/emoji.png" alt="" />
-        <span>would mean a lot if you starred it!</span>
-      </div>
-    </a>
-
-    <!-- ytm -->
-
-    <a class="top-bar-icon" href="https://music.youtube.com/playlist?list=PLASDflY7MWjE" target="_blank" rel="noopener noreferrer" aria-label="Open playlist on YouTube Music">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 16.5c-3.58 0-6.5-2.92-6.5-6.5S8.42 5.5 12 5.5s6.5 2.92 6.5 6.5-2.92 6.5-6.5 6.5zM9.5 8.5v7l6-3.5-6-3.5z"/></svg>
-      <span class="top-bar-icon-arrow" aria-hidden="true">↗</span>
-      <div class="top-bar-tooltip">
-        <span>Listen on YouTube Music</span>
-      </div>
-    </a>
-  </div>
-</div>
-
-
+    </div>
 
     <div id="youtube-player" class="yt-mount" aria-hidden="true"></div>
-
 
     <!-- player -->
 
@@ -145,18 +139,17 @@
         </button> 
 
       </div>
-    </div>
 
-    <div class="shuffle-hint" id="shuffleHint">
-      <span>Tired of the same order? Try shuffle</span>
-      <div class="shuffle-hint-actions">
-        <button class="shuffle-hint-ok" id="shuffleHintOk">OK</button>
-        <button class="shuffle-hint-never" id="shuffleHintNever">Don't show again</button>
+      <div class="shuffle-hint" id="shuffleHint">
+        <span>Tired of the same order? Try shuffle</span>
+        <div class="shuffle-hint-actions">
+          <button class="shuffle-hint-ok" id="shuffleHintOk">OK</button>
+          <button class="shuffle-hint-never" id="shuffleHintNever">Don't show again</button>
+        </div>
       </div>
     </div>
   </div>
 
   <script type="module" src="/src/main.js"></script>
-    
 </body>
 </html>
