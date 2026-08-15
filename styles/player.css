@@ -245,7 +245,7 @@ animation-play-state: paused;
   left: 50%;
   white-space: nowrap;
   padding: 6px 11px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(30, 18, 15, 0.55);
   backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 8px;
@@ -269,12 +269,14 @@ animation-play-state: paused;
 }
  
 
-/*  */
-
+.shuffle-btn-wrap {
+  position: relative;
+  display: flex;
+}
 
 .shuffle-hint {
   position: absolute;
-  bottom: calc(100% + 14px);
+  bottom: calc(100% + 16px);
   left: 50%;
   transform: translateX(-50%) translateY(4px);
   display: flex;
@@ -284,7 +286,7 @@ animation-play-state: paused;
   padding: 12px 14px;
   white-space: nowrap;
  
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(30, 18, 15, 0.55);
   backdrop-filter: blur(24px) saturate(140%);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 14px;
@@ -309,13 +311,16 @@ animation-play-state: paused;
   content: '';
   position: absolute;
   top: 100%;
-  left: 22px;
-  width: 10px;
-  height: 10px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  margin-top: -6px;
   background: inherit;
   border-right: 1px solid rgba(255, 255, 255, 0.16);
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-  transform: rotate(45deg) translateY(-5px);
+  transform: rotate(45deg);
+  border-bottom-right-radius: 2px;
 }
  
 .shuffle-hint-actions {
@@ -325,32 +330,32 @@ animation-play-state: paused;
 }
  
 .shuffle-hint-ok {
-  padding: 5px 14px;
+  padding: 6px 16px;
   border-radius: 999px;
-  background: var(--clr-amber);
-  color: var(--clr-void);
+  background-color: #ffffff;
+  color: #170a08;
+  border: 1px solid #ffffff;
   font-size: 0.72rem;
   font-weight: 600;
 }
- 
 .shuffle-hint-ok:hover {
-  background: var(--clr-cream);
+  background-color: var(--clr-amber);
+  border-color: var(--clr-amber);
 }
- 
 .shuffle-hint-never {
-  color: var(--clr-cream-dim);
+  padding: 6px 16px;
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--clr-cream);
+  border: 1px solid rgba(244, 233, 218, 0.5);
   font-size: 0.72rem;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  font-weight: 600;
 }
- 
 .shuffle-hint-never:hover {
-  color: var(--clr-cream);
+  background-color: rgba(244, 233, 218, 0.1);
+  border-color: var(--clr-cream);
 }
  
-.shuffle-hint-dismiss:hover {
-  color: var(--clr-cream);
-}
 
 @media (max-width: 480px) {
   .player-pill {

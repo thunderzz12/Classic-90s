@@ -95,17 +95,28 @@
 
       <div class="player-controls">
 
-        <!-- shuffle btn -->
+        <!-- shuffle btn and shuffle hint wrapped together -->
 
-        <button class="ctrl-btn ctrl-btn--toggle" id="btnShuffle" aria-label="Shuffle">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>
-          </svg>
-          <span class="ctrl-btn-dot" aria-hidden="true"></span>
-          <div class="icon-tooltip icon-tooltip--up">
-            <span id="shuffleTooltipText">Enable shuffle</span>
+        <div class="shuffle-btn-wrap">
+          <button class="ctrl-btn ctrl-btn--toggle" id="btnShuffle" aria-label="Shuffle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>
+            </svg>
+            <span class="ctrl-btn-dot" aria-hidden="true"></span>
+            <div class="icon-tooltip icon-tooltip--up">
+              <span id="shuffleTooltipText">Enable shuffle</span>
+            </div>
+          </button>
+ 
+          
+          <div class="shuffle-hint" id="shuffleHint">
+            <span>Tired of the same order? Try shuffle</span>
+            <div class="shuffle-hint-actions">
+              <button class="shuffle-hint-ok" id="shuffleHintOk">OK</button>
+              <button class="shuffle-hint-never" id="shuffleHintNever">Don't show again</button>
+            </div>
           </div>
-        </button>
+        </div>
 
         <!-- previous btn -->
 
@@ -138,14 +149,6 @@
           </div>
         </button> 
 
-      </div>
-
-      <div class="shuffle-hint" id="shuffleHint">
-        <span>Tired of the same order? Try shuffle</span>
-        <div class="shuffle-hint-actions">
-          <button class="shuffle-hint-ok" id="shuffleHintOk">OK</button>
-          <button class="shuffle-hint-never" id="shuffleHintNever">Don't show again</button>
-        </div>
       </div>
     </div>
   </div>
