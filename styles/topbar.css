@@ -71,10 +71,11 @@
 }
 
 .listener-label {
+  margin-left: 2px;
   font-family: var(--font-ui);
   font-size: 0.85rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.45);
+  color: #E9CAC7;
   line-height: 1;
 }
 
