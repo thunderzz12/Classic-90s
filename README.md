@@ -13,7 +13,8 @@ npm run dev
 ```
 
 ## upcoming feats
-- [ ] live listener count
+- [x] shuffle and repeat logic
+- [x] live listener count
 - [ ] site visits count
 - [ ] listen together
 
