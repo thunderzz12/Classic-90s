@@ -30,7 +30,7 @@ async function sendHeartbeat(sessionId) {
 }
 
 export function initListenerCount() {
-  const el = document.getElementById('listenerCount');
+  const el = document.getElementById('listenerNumber');
   if (!el) return;
 
   const sessionId = getSessionId();
@@ -39,7 +39,7 @@ export function initListenerCount() {
   const update = async () => {
     const count = await sendHeartbeat(sessionId);
     if (count !== null) {
-      el.textContent = `${count} listening`;
+      el.textContent = count;
       hasSucceededOnce = true;
     }
 

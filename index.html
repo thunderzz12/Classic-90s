@@ -35,10 +35,24 @@
     </div>
 
     <div class="top-bar">
+
+      <!-- left corner of top bar-->
       <div class="top-bar-zone top-bar-zone--left"></div>
 
-      <div class="top-bar-zone top-bar-zone--center" id="listenerCount"></div>
+      <!-- center of top bar -->
+      <div class="top-bar-zone top-bar-zone--center">
+        <div class="listener-badge">
+          <div class="listener-emoji-wrap">
+            <img src="/emoji-music.webp" class="listener-emoji" alt="" />
+            <div class="listener-decoy" aria-hidden="true"></div>
+          </div>
+          <span class="listener-number" id="listenerNumber">7</span>
+          <span class="listener-label">listening</span>
+        </div>
+      </div>
 
+
+      <!-- right corner of topbar -->
       <div class="top-bar-zone top-bar-zone--right">
 
         <!-- github -->
