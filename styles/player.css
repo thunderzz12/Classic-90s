@@ -371,3 +371,30 @@ animation-play-state: paused;
     font-size: 0.82rem;
   }
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .ctrl-btn:hover {
+    color: var(--clr-cream-dim);
+    background: transparent;
+  }
+
+  .ctrl-btn--main:hover {
+    transform: none;
+  }
+
+  .ctrl-btn--toggle.is-active:hover {
+    color: var(--clr-amber);
+  }
+
+  .icon-tooltip {
+    display: none !important;
+  }
+
+  .ctrl-btn:active {
+    transform: scale(0.92);
+  }
+
+  .ctrl-btn--main:active {
+    transform: scale(0.94);
+  }
+}
