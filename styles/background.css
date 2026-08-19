@@ -76,3 +76,19 @@
     background-image: url('/logo2.svg');
 }
 
+
+@media (max-width: 768px) {
+  .title-mark--upper {
+    top: 16%;
+    left: 40%;
+    width: min(120vw, 900px);
+    aspect-ratio: 6 / 1;
+}
+
+  .title-mark--lower {
+    top: 25%;
+    left: 62%;
+    width: min(95vw, 900px);
+    aspect-ratio: 6 / 1.4;
+}
+}

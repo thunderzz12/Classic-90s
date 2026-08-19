@@ -16,7 +16,7 @@ npm run dev
 - [x] shuffle and repeat logic
 - [x] live listener count
 - [ ] site visits count
-- [ ] mobile support
+- [x] mobile support
 - [ ] listen together
 
 ## Suggestions / Contributing

@@ -359,7 +359,7 @@ animation-play-state: paused;
 
 @media (max-width: 480px) {
   .player-pill {
-    bottom: 4%;
+    bottom: 10%;
     padding: 10px 14px 10px 10px;
     gap: 10px;
   }

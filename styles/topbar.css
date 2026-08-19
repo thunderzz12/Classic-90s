@@ -164,13 +164,55 @@
   background: rgba(255, 105, 180, 0.35);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .top-bar {
-    padding: 14px 16px;
+    padding: 16px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
+
+  .top-bar-zone--left {
+    display: none;
+  }
+
+  .top-bar-zone--center {
+    position: static;
+    transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .top-bar-zone--right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
   .top-bar-icon {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .listener-emoji-wrap {
+    width: 14px;
+    height: 14px;
+  }
+
+  .listener-number {
+    font-size: 0.9rem;
+  }
+
+  .listener-label {
+    font-size: 0.85rem;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .top-bar-tooltip,
+  .icon-tooltip {
+    display: none !important;
   }
 }
 
