@@ -373,12 +373,14 @@ animation-play-state: paused;
 }
 
 @media (hover: none) and (pointer: coarse) {
-  .ctrl-btn:hover {
+  .ctrl-btn:not(.ctrl-btn--main):hover {
     color: var(--clr-cream-dim);
     background: transparent;
   }
 
   .ctrl-btn--main:hover {
+    background-color: #ffffff;
+    color: #170a08;
     transform: none;
   }
 
