@@ -4,6 +4,7 @@ import { initNowPlaying } from './ui/nowPlaying.js';
 import { initBackgroundAmbience } from './ui/background.js';
 import { initShuffleHint } from './ui/onboarding.js';
 import { initListenerCount } from './ui/listenerCount.js';
+import { initVisitCount } from './ui/visitCount.js';
 
 async function bootstrap() {
   initNowPlaying();
@@ -11,6 +12,7 @@ async function bootstrap() {
   initBackgroundAmbience();
   initShuffleHint();
   initListenerCount();
+  initVisitCount();
   await initPlayer();
 }
 
