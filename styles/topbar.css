@@ -218,21 +218,32 @@
   }
 
   .top-bar-zone--left {
-    display: none;
+    display: flex;
+  }
+
+  .visit-eye-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .visit-number {
+    font-size: 0.85rem;
   }
 
   .top-bar-zone--center {
-    position: static;
-    transform: none;
+    position: absolute;
+    left: 49%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .top-bar-zone--right {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
+    transform: translateX(6px);
   }
 
   .top-bar-icon {
