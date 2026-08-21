@@ -15,7 +15,7 @@ npm run dev
 ## upcoming feats
 - [x] shuffle and repeat logic
 - [x] live listener count
-- [ ] site visits count
+- [x] site visits count
 - [x] mobile support
 - [ ] listen together
 
