@@ -27,11 +27,11 @@ export function initVisitCount() {
 
 
   fetchCurrentTotal().then((visits) => {
-    if (visits !== null) el.textContent = `${visits} visits`;
+    if (visits !== null) el.textContent = visits;
   });
 
   setTimeout(async () => {
     const visits = await registerVisit();
-    if (visits !== null) el.textContent = `${visits} visits`;
+    if (visits !== null) el.textContent = visits;
   }, DWELL_DELAY_MS);
 }
