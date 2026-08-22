@@ -1,0 +1,22 @@
+# Classic 90s
+> A nostalgic web radio and ambient music player streaming iconic 90s Hindi bangers set against a classic Indian roadside tea stall (Chai Ki Tapri) aesthetic.
+
+## Overview
+Classic 90s is a vibe-first web application designed to bring back the golden era of Hindi retro tracks. Combining a warm, vintage aesthetic with a modern, glassmorphic audio interface, it offers users a distraction-free space to relax, work, or reminisce.
+
+## Core Features
+- **Curated 90s Bollywood Hits**: Continuous streaming of classic 90s and early 2000s Hindi songs and timeless Bollywood melodies.
+- **Chai Ki Tapri Visual Vibe**: Handcrafted background visual evoking the warmth of an Indian street-side tea stall, evening chatter, and vintage radio nostalgia.
+- **Minimalist Glass Audio Player**: Clean, unobtrusive player with essential controls (play/pause, skip, shuffle, progress bar, and track metadata).
+- **Live Social Presence**: Real-time counter showing active listeners currently tuned in alongside overall site visit metrics.
+- **Audio engine**: YT iframe api with self made queue logic.
+
+## Technical Details & Source Code
+- **Deployment**: https://classic90s.vercel.app
+- **Creator**: thunderzz12
+- **License**: Open Source
+- **GitHub Repository**: [thunderzz12/Classic-90s](https://github.com/thunderzz12/Classic-90s)
+
+## Target Audience & Use Cases
+- Fans of vintage Bollywood music, 90s Indian pop, and retro nostalgia.
+- Background audio for studying, relaxing, late-night unwinding, or coding.
