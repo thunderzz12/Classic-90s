@@ -13,11 +13,8 @@ async function fetchCurrentTotal() {
  
 async function registerVisit() {
   try {
-    const response = await fetch(`${WORKER_BASE_URL}/api/visit`, { method: 'POST' });
-    const { visits } = await response.json();
-    return visits;
+    await fetch(`${WORKER_BASE_URL}/api/visit`, { method: 'POST' });
   } catch {
-    return null;
   }
 }
 
@@ -30,8 +27,7 @@ export function initVisitCount() {
     if (visits !== null) el.textContent = visits;
   });
 
-  setTimeout(async () => {
-    const visits = await registerVisit();
-    if (visits !== null) el.textContent = visits;
+  setTimeout(() => {
+    registerVisit();
   }, DWELL_DELAY_MS);
 }
