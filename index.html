@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="/styles/background.css" />
   <link rel="stylesheet" href="/styles/topbar.css" />
   <link rel="stylesheet" href="/styles/player.css" />
+  <link rel="stylesheet" href="/styles/menu.css" />
 </head>
 
 <body>
@@ -104,6 +105,20 @@
             <span>Listen on YouTube Music</span>
           </div>
         </a>
+
+        <!-- menu -->
+        <div class="menu-wrap">
+          <button class="top-bar-icon" id="btnMenu" aria-label="Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M2 6h20M2 12h20M2 18h20"/></svg>
+          </button>
+          <div class="menu-dropdown" id="menuDropdown">
+            <button class="menu-item" id="menuChangelog">Changelog</button>
+            <a class="menu-item" href="https://github.com/thunderzz12/Classic-90s/issues/new" target="_blank" rel="noopener noreferrer">Suggest a Feature</a>
+            <a class="menu-item" href="https://github.com/thunderzz12/Classic-90s/issues/new" target="_blank" rel="noopener noreferrer">Report a Bug</a>
+            <button class="menu-item" id="menuShortcuts">Keyboard Shortcuts</button>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -192,6 +207,39 @@
           </div>
         </button> 
 
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="shortcutsModal">
+    <div class="modal-panel modal-panel--small">
+      <div class="modal-header">
+        <h2>Keyboard Shortcuts</h2>
+        <button class="modal-close" id="shortcutsModalClose" aria-label="Close">&times;</button>
+      </div>
+      <ul class="shortcut-list">
+        <li><span>Play / Pause</span><kbd>Space</kbd></li>
+        <li><span>Seek -5s / +5s</span><span><kbd>&larr;</kbd> <kbd>&rarr;</kbd></span></li>
+        <li><span>Previous / Next track</span><span><kbd>Ctrl</kbd>+<kbd>&larr;</kbd> <kbd>Ctrl</kbd>+<kbd>&rarr;</kbd></span></li>
+        <li><span>Toggle shuffle</span><kbd>S</kbd></li>
+        <li><span>Toggle repeat</span><kbd>R</kbd></li>
+        <li><span>Show this window</span><kbd>?</kbd></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal-overlay modal-overlay--full" id="changelogModal">
+    <div class="modal-panel modal-panel--changelog" id="changelogPanel">
+      <div class="changelog-topbar">
+        <span>Changelog</span>
+        <span id="changelogCount"></span>
+        <button class="modal-close" id="changelogModalClose" aria-label="Close">&times;</button>
+      </div>
+      <div class="changelog-body">
+        <div class="changelog-dial-wrap">
+          <canvas id="changelogCanvas"></canvas>
+        </div>
+        <div class="changelog-detail" id="changelogDetail"></div>
       </div>
     </div>
   </div>

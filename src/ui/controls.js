@@ -3,9 +3,11 @@ import {
   nextTrack,
   prevTrack,
   seekToFraction,
+  seekBySeconds,
   toggleShuffle,
   toggleRepeat,
 } from '../player/youtubePlayer.js';
+import { openShortcutsModal } from './menu.js';
 import { subscribe } from '../player/playerState.js';
 
 
@@ -71,16 +73,27 @@ export function initControls() {
   });
 
 
-// space to play/pause, arrows to change track  
+  // keyboard shortcuts 
   window.addEventListener('keydown', (event) => {
     if (event.target.tagName === 'INPUT') return;
+
     if (event.code === 'Space') {
       event.preventDefault();
       togglePlay();
     } else if (event.code === 'ArrowRight') {
-      nextTrack();
+      event.preventDefault();
+      if (event.ctrlKey) nextTrack();
+      else seekBySeconds(5);
     } else if (event.code === 'ArrowLeft') {
-      prevTrack();
+      event.preventDefault();
+      if (event.ctrlKey) prevTrack();
+      else seekBySeconds(-5);
+    } else if (event.key === 's' || event.key === 'S') {
+      toggleShuffle();
+    } else if (event.key === 'r' || event.key === 'R') {
+      toggleRepeat();
+    } else if (event.key === '?') {
+      openShortcutsModal();
     }
   });
 }

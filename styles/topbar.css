@@ -151,6 +151,10 @@
   padding: 9px;
 }
 
+#btnMenu svg {
+  padding: 5px;
+}
+
 .top-bar-icon-arrow {
   position: absolute;
   bottom: -3px;
